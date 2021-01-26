@@ -131,7 +131,7 @@ def play(board)
   end
 
   if won?(board)
-    puts "Congragulations! #{winner(board)}"
+    puts "Congragulations #{winner(board)}"
   end
 
   if draw?(board)
