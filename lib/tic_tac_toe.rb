@@ -33,8 +33,7 @@ end
 
 #6 Define #position_taken? method
 def position_taken?(board, index)
-  board[index] == " " || board[index] == "" || board[index] == nil
-    return true
+  !(board[index].nil? || board[index] == " ")
 end
 
 #7 Define #valid_move? method
