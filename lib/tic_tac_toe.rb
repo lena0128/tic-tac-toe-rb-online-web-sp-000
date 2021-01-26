@@ -124,5 +124,3 @@ def winner(board)
       return "O"
     end
   end
-
-
