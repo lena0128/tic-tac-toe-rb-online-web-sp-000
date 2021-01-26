@@ -37,6 +37,7 @@ def position_taken?(board, index)
     return false
   else
     return true
+  end
 end
 
 #7 Define #valid_move? method
