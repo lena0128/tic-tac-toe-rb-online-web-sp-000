@@ -1,4 +1,4 @@
-# 1. Define your #WIN_COMBINATIONS constant
+# 1. define your #WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
   [0,1,2], #top row
   [3,4,5], # middle row
@@ -10,7 +10,7 @@ WIN_COMBINATIONS = [
   [2,4,6] #right diagonal row
 ]
 
-#2 & 3 Define the board and #display_board method
+#2 & 3 define the board and #display_board method
 board =[" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -21,17 +21,17 @@ def display_board(board)
 end
 display_board(board)
 
-#4 Define #input_to_index method, which takes the user_input (which is a string), converts it to an Integer, and subtracts 1.
+#4 define #input_to_index method, which takes the user_input (which is a string), converts it to an Integer, and subtracts 1
 def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-#5 Define #move method
+#5 define #move method
 def move(board, index, marker)
   board[index] = marker
 end
 
-#6 Define #position_taken? method
+#6 define #position_taken? method
 def position_taken?(board, index)
   if board[index] == "" || board[index] == " " || board[index] == nil
     return false
@@ -40,25 +40,25 @@ def position_taken?(board, index)
   end
 end
 
-#7 Define #valid_move? method
+#7 define #valid_move? method
 def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index) #If the position isn't taken and is on the board, the move must be valid.
+  index.between?(0,8) && !position_taken?(board, index) #if the position isn't taken and is on the board, the move must be valid
 end
 
-#8 Define #turn method
+#8 define #turn method
 def turn(board)
 puts "Please enter 1-9:"
 user_input = gets.strip
 index = input_to_index(user_input)
-if !valid_move?(board, index)  #asks for input again is the input is not valid.
+if !valid_move?(board, index)  #asks for input again is the input is not valid
   turn(board)
-else   #If the input is valid makes the move then
+else   #if the input is valid makes the move then
   move(board, index, current_player(board))
  end
  display_board(board)
 end
 
-#9 Define #turn_count method
+#9 define #turn_count method
 def turn_count(board)
 counter = 0
 board.each do |board_x|
@@ -69,7 +69,7 @@ counter += 1
 return counter
 end
 
-#10 Define #current_player method
+#10 define #current_player method
 def current_player(board)
 if turn_count(board) % 2 == 0
   "X"
@@ -78,7 +78,7 @@ elsif turn_count(board) % 2 == 1
   end
 end
 
-#11 Define #won? method, which uses #each method to iterate through a nesed array.
+#11 define #won? method, which uses #each method to iterate through a nesed array.
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
     if board[win_combination[0]] == "X" && board[win_combination[1]] == "X" && board[win_combination[2]] == "X"
@@ -90,21 +90,21 @@ def won?(board)
  return false
 end
 
-#12 Define #full? method to check if the board is full.
+#12 define #full? method to check if the board is full.
 def full?(board)
     board.all? do |board_full|
       board_full == "X" || board_full == "O"
     end
 end
 
-#13 Define #draw? method
+#13 define #draw? method
 def draw?(board)
   if full?(board) == true && won?(board) == false
    true
   end
 end
 
-#14 Define #over? method to ckeck if the current round of game if over.
+#14 define #over? method to ckeck if the current round of game if over.
 def over?(board)
   if won?(board) || full?(board) || draw?(board)
     return true
@@ -113,9 +113,9 @@ def over?(board)
   end
 end
 
-#15 Define #winner method to check who is the winner.
+#15 define #winner method to check who is the winner.
 def winner(board)
- # returns X when X won, O when O won and nill when no winner
+ # returns X when X won, O when O won and nill when there is no winner
  if (draw?(board) || !full?(board)) && !won?(board)
     return nil
   elsif (board[won?(board)[0]] == "X")
@@ -125,7 +125,7 @@ def winner(board)
   end
 end
 
-# Final - Define #play method
+#16 final - define #play method
 def play(board)
   while !over?(board) && !won?(board) && !draw?(board) # if the game isnt over
     turn(board) # play another turn
