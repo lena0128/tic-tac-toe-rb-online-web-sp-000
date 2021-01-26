@@ -126,7 +126,7 @@ def winner(board)
   end
 
 def play(board)
-input = gets.strip
+input = gets
 turn(board)
   if won?(board)
     puts "Congragulation!! You win!"
