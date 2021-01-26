@@ -45,6 +45,19 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index) #If the position isn't taken and is on the board, the move must be valid.
 end
 
+#8 Define #turn method
+def turn(board)
+puts "Please enter 1-9:"
+user_input = gets.strip
+index = input_to_index(user_input)
+if !valid_move?(board, index)  #asks for input again is the input is not valid.
+  turn(board)
+else   #If the input is valid makes the move then
+  move(board, index, current_player(board))
+ end
+ display_board(board)
+end
+
 #8 Define #turn_count method
 def turn_count(board)
 counter = 0
@@ -63,19 +76,6 @@ if turn_count(board) % 2 == 0
 elsif turn_count(board) % 2 == 1
   "O"
   end
-end
-
-#10 Define #turn method
-def turn(board)
-puts "Please enter 1-9:"
-user_input = gets.strip
-index = input_to_index(user_input)
-if valid_move?(board, index) == true
-  move(board, index, marker)
-return display_board(board)
-else
-  turn(board)  #here is a recursion
- end
 end
 
 #11 Define #won? method, which uses #each method to iterate through a nesed array.
