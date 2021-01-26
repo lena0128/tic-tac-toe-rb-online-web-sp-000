@@ -38,7 +38,11 @@ end
 
 #7 Define #valid_move? method
 def valid_move?(board, index)
-  position_taken?(board, index) && index.between?(0, 8)
+   if position_taken?(board, index) && index.between?(0, 8)
+     true
+   else
+     false
+  end
 end
 
 #8 Define #turn_count method
