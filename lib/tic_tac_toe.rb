@@ -115,15 +115,15 @@ end
 
 #15 Define #winner method to check who is the winner.
 def winner(board)
-  checkwinner = won?(board)
-  if won?(board) == false
+ # returns X when X won, O when O won and nill when no winner
+ if (draw?(board) || !full?(board)) && !won?(board)
     return nil
-  elsif board[checkwinner[0]] == "X"
-      return "X"
-    elsif board[checkwinner[0]] == "O"
-      return "O"
-    end
+  elsif (board[won?(board)[0]] == "X")
+    return "X"
+  elsif (board[won?(board)[0]] == "O")
+    return "O"
   end
+end
 
 def play(board)
   if !over?(board)  #Make turns if the game is not over
