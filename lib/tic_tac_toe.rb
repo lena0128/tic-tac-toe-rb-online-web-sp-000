@@ -126,7 +126,6 @@ def winner(board)
   end
 
 def play(board)
-  turn(board)
   if !over?(board)  #Make turns if the game is not over
     turn(board)
 
