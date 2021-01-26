@@ -125,15 +125,20 @@ def winner(board)
   end
 end
 
+# Final - Define #play method
 def play(board)
-  if !over?(board)  #Make turns if the game is not over
-    turn(board)
-
-  elsif won?(board)
-    puts "Congragulations #{winner(board)}!"
-
-  elsif draw?(board)
-    puts "Cat's Game!"
-
+  while !over?(board) && !won?(board) && !draw?(board) # if the game isnt over
+    turn(board) # play another turn
   end
+
+# if the game is over
+  if won?(board)
+   puts "Congratulations #{winner(board)}!"
+ end
+
+# if its a draw
+ if draw?(board)
+   puts "Cats Game!"
+ end
+
 end
