@@ -33,11 +33,10 @@ end
 
 #6 Define #position_taken? method
 def position_taken?(board, index)
-  if !(board[index] == "" || board[index] == " " || board[index] == nil)
-    return true
+  if board[index] == "" || board[index] == " " || board[index] == nil
+    return false
   else
-    return flase
-
+    return true
   end
 end
 
