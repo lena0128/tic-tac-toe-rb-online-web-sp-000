@@ -126,12 +126,12 @@ def winner(board)
   end
 
 def play(board)
-  while !over?(board) && !won?(board) && !draw(board)  #Make turns if the game is not over
+  while !over?(board) && !won?(board) && !draw?(board)  #Make turns if the game is not over
     turn(board)
   end
 
   if won?(board)
-    puts "Congragulations #{winner(board)}"
+    puts "Congragulations #{winner(board)}!"
   end
 
   if draw?(board)
