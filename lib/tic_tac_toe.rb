@@ -42,7 +42,7 @@ end
 
 #7 Define #valid_move? method
 def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+  index.between?(0,8) && !position_taken?(board, index) #If the position isn't taken and is on the board, the move must be valid.
 end
 
 #8 Define #turn_count method
