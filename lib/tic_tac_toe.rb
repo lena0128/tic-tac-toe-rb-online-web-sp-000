@@ -42,7 +42,7 @@ end
 
 #7 Define #valid_move? method
 def valid_move?(board, index)
-   if index.between?(0, 8) && position_taken?(board, index) == true
+   if position_taken?(board, index) == true && index.between?(0, 8)
      return true
   else
     return false
