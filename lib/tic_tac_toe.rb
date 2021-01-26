@@ -137,4 +137,4 @@ def play(board)
   if draw?(board)
     puts "It is a draw!"
   end
-end 
+end
