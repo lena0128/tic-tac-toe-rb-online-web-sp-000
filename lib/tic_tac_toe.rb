@@ -126,7 +126,7 @@ def winner(board)
   end
 
 def play(board)
-  3 times.do turn(board)
+  3.times do turn(board)
   if !over?(board)  #Make turns if the game is not over
     turn(board)
 
