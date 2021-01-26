@@ -58,7 +58,7 @@ else   #If the input is valid makes the move then
  display_board(board)
 end
 
-#8 Define #turn_count method
+#9 Define #turn_count method
 def turn_count(board)
 counter = 0
 board.each do |board_x|
@@ -69,7 +69,7 @@ counter += 1
 return counter
 end
 
-#9 Define #current_player method
+#10 Define #current_player method
 def current_player(board)
 if turn_count(board) % 2 == 0
   "X"
