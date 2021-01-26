@@ -125,12 +125,4 @@ def winner(board)
     end
   end
 
-def play(board)
-input = gets
-turn(board)
-  if won?(board)
-    puts "Congragulation!! You win!"
-  elsif draw?(board)
-    puts "It is a draw!"
-  end
-end
+
